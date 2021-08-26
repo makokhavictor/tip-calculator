@@ -9,18 +9,14 @@
         <span class="input-icon">
           <img src="assets/images/icon-dollar.svg" alt="dollar">
         </span>
-        <input type="text" [(ngModel)]="billAmount">
+        <input type="number" [(ngModel)]="billAmount">
       </div>
       <div class="tip-options">
         <p class="title">Select Tip %</p>
         <div class="options">
           <div class="tip-option" [ngClass]="{'active':perc == selectedPercentage}" *ngFor="let perc of percentages" (click)="setPercentage(perc)">{{perc}}%</div>
-          <!-- <div class="tip-option" (click)="setPercentage(10)">10%</div>
-          <div class="tip-option" (click)="setPercentage(15)">15%</div>
-          <div class="tip-option" (click)="setPercentage(25)">25%</div>
-          <div class="tip-option" (click)="setPercentage(50)">50%</div> -->
           <div class="custom-tip-option">
-            <input type="text" placeholder="Custom">
+            <input class="custom-input" type="number" placeholder="Custom" [(ngModel)]="customInput" (input)="setCustomPercentage()" >
           </div>
         </div>
 
@@ -30,7 +26,7 @@
         <span class="input-icon">
           <img src="assets/images/icon-person.svg" alt="people">
         </span>
-        <input type="text"  [(ngModel)]="numberOfPeople">
+        <input type="number"  [(ngModel)]="numberOfPeople">
       </div>
     </div>
     <div class="right">

@@ -11,6 +11,7 @@ export class AppComponent {
   numberOfPeople:number;
   selectedPercentage:number;
   percentages:any[];
+  customInput: number;
 
   constructor(){
     this.billAmount = 0;
@@ -42,5 +43,10 @@ export class AppComponent {
     this.billAmount = 0;
     this.numberOfPeople = 0;
     this.selectedPercentage = 5;
+    this.customInput = null;
+  }
+
+  setCustomPercentage(){
+    this.selectedPercentage = this.customInput;
   }
 }

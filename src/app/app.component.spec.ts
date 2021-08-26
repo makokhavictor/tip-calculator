@@ -95,4 +95,19 @@ describe('AppComponent', () => {
     app.reset();
     expect(app.selectedPercentage).toBe(5);
   });
+  it('should set selected percentage based on custom input',()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app  = fixture.componentInstance;
+    app.customInput = 18;
+    app.setCustomPercentage();
+    expect(app.selectedPercentage).toBe(18);
+  });
+  it('should clear custom input on reset ',()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app  = fixture.componentInstance;
+    app.customInput = 18;
+    app.reset()
+    expect(app.customInput).toBeNull();
+  });
+
 });
