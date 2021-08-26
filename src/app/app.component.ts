@@ -7,17 +7,34 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tipcalculator';
+  billAmount:number;
+  numberOfPeople:number;
+  selectedPercentage:number;
+  percentages:any[];
 
+  constructor(){
+    this.billAmount = 0;
+    this.numberOfPeople = 0;
+    this.selectedPercentage = 5;
+    this.percentages = [5,10,15,25,50];
+  }
 
-  calculateTipPerPerson(params:any):Number{
-    const totalTip = params.percentage * params.billAmount;
-    const tipPerPerson = totalTip / params.numberOfPeople;
+  setPercentage(percentage:any){
+    this.selectedPercentage = percentage;
+  }
+  calculateTipPerPerson():number{
+    if(this.numberOfPeople == 0) return 0;
+    const totalTip = (this.selectedPercentage) / 100 * this.billAmount;
+    const tipPerPerson = totalTip / this.numberOfPeople;
     return parseFloat(tipPerPerson.toFixed(2));
   }
 
-  calculateTotalBillPerPerson(params:any):Number{
-    const billWithoutTip = params.billAmount / params.numberOfPeople;
-    const totalBillPerPerson = billWithoutTip + params.tipPerPerson;
-    return totalBillPerPerson;
+  calculateTotalBillPerPerson():number{
+   
+    if(this.numberOfPeople == 0) return 0;
+     const billWithoutTip = this.billAmount / this.numberOfPeople;
+    const tipPerPerson = this.calculateTipPerPerson();
+    const totalBillPerPerson = billWithoutTip + tipPerPerson;
+    return parseFloat(totalBillPerPerson.toFixed(2));
   }
 }
