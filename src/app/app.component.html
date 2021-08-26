@@ -14,7 +14,7 @@
       <div class="tip-options">
         <p class="title">Select Tip %</p>
         <div class="options">
-          <div class="tip-option" *ngFor="let perc of percentages" (click)="setPercentage(perc)">{{perc}}%</div>
+          <div class="tip-option" [ngClass]="{'active':perc == selectedPercentage}" *ngFor="let perc of percentages" (click)="setPercentage(perc)">{{perc}}%</div>
           <!-- <div class="tip-option" (click)="setPercentage(10)">10%</div>
           <div class="tip-option" (click)="setPercentage(15)">15%</div>
           <div class="tip-option" (click)="setPercentage(25)">25%</div>
@@ -49,7 +49,7 @@
       </div>
 
       <div class="button-cont">
-        <button class="btn">RESET</button>
+        <button class="btn" (click)="reset()">RESET</button>
       </div>
     </div>
   </div>

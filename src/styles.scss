@@ -89,7 +89,7 @@ body{
     cursor: pointer;
 
 }
-.tip-options .tip-option:active,.tip-options .tip-option:visited{
+.tip-options .tip-option.active{
     background-color: var(--strong-cyan);
     color: var(--very-dark-cyan);
 }

@@ -72,4 +72,27 @@ describe('AppComponent', () => {
 
     expect(totalBillPerPerson).toBe(0);
   });
+  it('should set bill amount to zero on reset',()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app  = fixture.componentInstance;
+    app.billAmount = 142.55;
+    app.reset();
+    expect(app.billAmount).toBe(0);
+  });
+
+  it('should set number of people to zero on reset',()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app  = fixture.componentInstance;
+    app.numberOfPeople = 5;
+    app.reset();
+    expect(app.numberOfPeople).toBe(0);
+  });
+
+  it('should set selected percentage to 5 on reset',()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app  = fixture.componentInstance;
+    app.selectedPercentage = 5;
+    app.reset();
+    expect(app.selectedPercentage).toBe(5);
+  });
 });

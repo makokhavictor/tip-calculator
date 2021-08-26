@@ -37,4 +37,10 @@ export class AppComponent {
     const totalBillPerPerson = billWithoutTip + tipPerPerson;
     return parseFloat(totalBillPerPerson.toFixed(2));
   }
+
+  reset(){
+    this.billAmount = 0;
+    this.numberOfPeople = 0;
+    this.selectedPercentage = 5;
+  }
 }
