@@ -59,7 +59,7 @@ body{
     top: 60%;
     left: 5%;
 }
-.input-container input{
+.input-container input, .custom-tip-option input{
     text-align: right;
     background-color: var(--light-grayish-cyan1);
     border:none;
@@ -72,6 +72,11 @@ body{
     border-radius: 3px;
     outline: none;
 
+}
+.custom-tip-option input{
+    text-align: center;
+    height: 65%;
+    width: 85%;
 }
 .options{
     display: grid;
